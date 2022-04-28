@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Parasyti dokumentacija
+ * Contract entity is used for contract's creation and to show which tenants are a part of a contract.
  */
 @Getter
 @Setter
@@ -32,29 +32,4 @@ public class Contract {
     private Date endDate;
     @XmlElement(name="tenant")
     private List<Tenant> tenantsList;
-
-    /*@Override
-    public String toString() {
-        return String.format("\ncontract: \n\t"
-                        + "number = %s\n\t"
-                        + "signed = %b\n\t"
-                        + "signed date = %s\n\t"
-                        + "start date = %s\n\n\t"
-                        + "end date = %s\n\n\t"
-                        + "Tenants: %s\n\t",
-                number, isSigned, signedDate, startDate, endDate, printTenants());
-    }
-
-    private Object printTenants() {
-        String result = "";
-        for(Tenant tenant : tenantsList) {
-            result = String.format("\n\t\ttenant: \n\t\t\t"
-                            + "name = %s\n\t\t\t"
-                            + "surname = %s\n\t\t\t"
-                            + "email = %s\n\t\t"
-                            + "phone = %s\n\t\t",
-                    tenant.getName(), tenant.getSurname(), tenant.getEmail(), tenant.getPhone());
-        }
-        return result;
-    }*/
 }

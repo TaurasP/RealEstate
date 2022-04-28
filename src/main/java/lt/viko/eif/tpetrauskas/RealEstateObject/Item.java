@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 
 /**
- * Parasyti dokumentacija
+ * Item is an entity used for item's creation and to show items which belong to Room entity.
  */
 @Getter
 @Setter

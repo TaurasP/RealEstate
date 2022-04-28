@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 
 /**
- * Parasyti dokumentacija
+ * Key is an entity used for key's creation.
  */
 @Getter
 @Setter
@@ -22,12 +22,4 @@ public class Key {
     private int id;
     @XmlAttribute
     private int numberOfCopies;
-
-    /*@Override
-    public String toString() {
-        return String.format("Key: \n\t"
-                        + "id = %d\n\t"
-                        + "number of copies = %d\n\t",
-                                id, numberOfCopies);
-    }*/
 }

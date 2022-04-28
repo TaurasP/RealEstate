@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.*;
 import java.util.List;
 
 /**
- * Parasyti dokumentacija
+ * RealEstateObject is the main entity which is used in marshaling and un-marshaling
  */
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 @XmlRootElement
@@ -46,6 +46,11 @@ public class RealEstateObject {
     @XmlElement(name = "key")
     private List<Key> keysList;
 
+    /**
+     * Gets formatted real estate object's data
+     *
+     * @return formatted real estate object's data
+     */
     @Override
     public String toString() {
         return String.format("Real estate object: \n\t"
@@ -64,6 +69,11 @@ public class RealEstateObject {
                             type, price, address, squareMeters, numberOfFloors, isWater, isGas, isElectricity, isSewerage, printOwners(), printContracts(), printRooms(), printKeys());
     }
 
+    /**
+     * Gets formatted owners' data
+     *
+     * @return formatted owners' data
+     */
     private Object printOwners() {
         String result = "";
         for(Owner owner : ownerList) {
@@ -77,6 +87,11 @@ public class RealEstateObject {
         return result;
     }
 
+    /**
+     * Gets formatted tenants' data
+     *
+     * @return formatted tenants' data
+     */
     private Object printTenants() {
         String result = "";
         for(Tenant tenant : tenantList) {
@@ -90,6 +105,11 @@ public class RealEstateObject {
         return result;
     }
 
+    /**
+     * Gets formatted contracts' data
+     *
+     * @return formatted contracts' data
+     */
     private Object printContracts() {
         String result = "";
         for(Contract contract : contractList) {
@@ -106,6 +126,11 @@ public class RealEstateObject {
         return result;
     }
 
+    /**
+     * Gets formatted rooms' data
+     *
+     * @return formatted rooms' data
+     */
     private Object printRooms() {
         String result = "";
         for(Room room : roomsList) {
@@ -119,6 +144,11 @@ public class RealEstateObject {
         return result;
     }
 
+    /**
+     * Gets formatted items' data
+     *
+     * @return formatted items' data
+     */
     private Object printItems() {
         String result = "";
         for(Item item : itemsList) {
@@ -131,6 +161,11 @@ public class RealEstateObject {
         return result;
     }
 
+    /**
+     * Gets formatted keys' data
+     *
+     * @return formatted keys' data
+     */
     private Object printKeys() {
         String result = "";
         for(Key key : keysList) {

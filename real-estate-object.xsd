@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="realEstateObject" type="realEstateObjectType"/>
+  <xs:complexType name="ownerType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="email"/>
+      <xs:element type="xs:string" name="name"/>
+      <xs:element type="xs:string" name="phone"/>
+      <xs:element type="xs:string" name="surname"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tenantType">
+    <xs:sequence>
+      <xs:element name="email">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="matas.berzas@gmail.com"/>
+            <xs:enumeration value="liepa.berze@gmail.com"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="name">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Matas"/>
+            <xs:enumeration value="Liepa"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="phone">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="860000003"/>
+            <xs:enumeration value="860000004"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="surname">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Berzas"/>
+            <xs:enumeration value="Berze"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="contractType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="number"/>
+      <xs:element type="xs:string" name="isSigned"/>
+      <xs:element type="xs:string" name="signedDate"/>
+      <xs:element type="xs:string" name="startDate"/>
+      <xs:element type="xs:string" name="endDate"/>
+      <xs:element type="tenantType" name="tenant" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="itemsType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="name" use="optional"/>
+        <xs:attribute type="xs:string" name="condition" use="optional"/>
+        <xs:attribute type="xs:string" name="description" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="roomType">
+    <xs:sequence>
+      <xs:element type="itemsType" name="items" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="condition" use="optional"/>
+    <xs:attribute type="xs:string" name="description" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="itemType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="name" use="optional"/>
+        <xs:attribute type="xs:string" name="condition" use="optional"/>
+        <xs:attribute type="xs:string" name="description" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="keyType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="id" use="optional"/>
+        <xs:attribute type="xs:string" name="numberOfCopies" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="realEstateObjectType">
+    <xs:sequence>
+      <xs:element type="ownerType" name="owner"/>
+      <xs:element type="tenantType" name="tenant" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="contractType" name="contract"/>
+      <xs:element type="roomType" name="room" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="itemType" name="item" maxOccurs="unbounded" minOccurs="0"/>
+      <xs:element type="keyType" name="key" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="type"/>
+    <xs:attribute type="xs:string" name="price"/>
+    <xs:attribute type="xs:string" name="address"/>
+    <xs:attribute type="xs:string" name="squareMeters"/>
+    <xs:attribute type="xs:string" name="numberOfFloors"/>
+    <xs:attribute type="xs:string" name="isWater"/>
+    <xs:attribute type="xs:string" name="isGas"/>
+    <xs:attribute type="xs:string" name="isElectricity"/>
+    <xs:attribute type="xs:string" name="isSewerage"/>
+  </xs:complexType>
+</xs:schema>

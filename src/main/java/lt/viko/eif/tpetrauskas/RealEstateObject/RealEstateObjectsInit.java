@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+/**
+ * RealEstateObjectsInit is an entity used to create, initialize data for real estate objects
+ */
 public class RealEstateObjectsInit {
     List<RealEstateObject> realEstateObjectList = new ArrayList<>();
 
@@ -25,6 +28,11 @@ public class RealEstateObjectsInit {
     List<Key> keys1 = new ArrayList<>();
     List<Key> keys2 = new ArrayList<>();
 
+    /**
+     * Gets list of real estate objects
+     *
+     * @return list of real estate objects
+     */
     public List<RealEstateObject> getRealEstateObjectList() {
         ownersList.add(new Owner("Petras", "Petraitis", "petras.petraitis@gmail.com", 860000001));
         ownersList2.add(new Owner("Jonas", "Jonaitis", "jonas.jonaitis@gmail.com", 860000002));

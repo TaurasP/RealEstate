@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<realEstateObject type="namas" price="200000.0" address="Vilniaus g. 1" squareMeters="120.5" numberOfFloors="2" isWater="true" isGas="true" isElectricity="true" isSewerage="true">
+    <owner>
+        <email>petras.petraitis@gmail.com</email>
+        <name>Petras</name>
+        <phone>860000001</phone>
+        <surname>Petraitis</surname>
+    </owner>
+    <tenant>
+        <email>matas.berzas@gmail.com</email>
+        <name>Matas</name>
+        <phone>860000003</phone>
+        <surname>Berzas</surname>
+    </tenant>
+    <tenant>
+        <email>liepa.berze@gmail.com</email>
+        <name>Liepa</name>
+        <phone>860000004</phone>
+        <surname>Berze</surname>
+    </tenant>
+    <contract>
+        <number>LT20220501-01</number>
+        <isSigned>true</isSigned>
+        <signedDate>2022-06-01T22:27:47.422+03:00</signedDate>
+        <startDate>2022-06-01T22:27:47.469+03:00</startDate>
+        <endDate>2023-05-30T22:27:47.469+03:00</endDate>
+        <tenant>
+            <email>matas.berzas@gmail.com</email>
+            <name>Matas</name>
+            <phone>860000003</phone>
+            <surname>Berzas</surname>
+        </tenant>
+        <tenant>
+            <email>liepa.berze@gmail.com</email>
+            <name>Liepa</name>
+            <phone>860000004</phone>
+            <surname>Berze</surname>
+        </tenant>
+    </contract>
+    <room name="svetaine" condition="puiki" description="">
+        <items name="stalas" condition="puiki" description=""/>
+        <items name="sofa" condition="puiki" description="odine rudos spalvos"/>
+    </room>
+    <room name="darbo kambarys" condition="puiki" description="">
+        <items name="stalas" condition="puiki" description=""/>
+        <items name="sofa" condition="puiki" description="odine rudos spalvos"/>
+    </room>
+    <item name="stalas" condition="puiki" description=""/>
+    <item name="sofa" condition="puiki" description="odine rudos spalvos"/>
+    <key id="11100012" numberOfCopies="3"/>
+    <key id="1000002323" numberOfCopies="2"/>
+</realEstateObject>

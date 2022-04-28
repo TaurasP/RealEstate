@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * Parasyti dokumentacija
+ * Person entity is a parent entity for Owner and Tenant entities.
  */
 @Getter
 @Setter

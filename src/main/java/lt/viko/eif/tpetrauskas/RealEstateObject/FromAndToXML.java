@@ -13,6 +13,9 @@ import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
 import java.io.*;
 
+/**
+ * FromAndToXML is an entity used for marshaling, un-marshaling
+ */
 public class FromAndToXML {
     private JAXBContext jaxbContext = JAXBContext.newInstance(RealEstateObject.class);
     private StringWriter xmlWriter = new StringWriter();
@@ -22,17 +25,24 @@ public class FromAndToXML {
     public FromAndToXML() throws JAXBException {
     }
 
-    // MARSHALING
+    /**
+     * Performs marshaling, saves data to XML file and outputs result to a console
+     *
+     * @param realEstateObject a real estate object
+     */
     public void transformToXML(RealEstateObject realEstateObject) throws JAXBException {
         Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
         jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         jaxbMarshaller.marshal(realEstateObject, new File(fileNameXML));
-}
+        jaxbMarshaller.marshal(realEstateObject, xmlWriter);
+        System.out.println(xmlWriter);
+    }
 
-    // UNMARSHALING
+    /**
+     * Performs un-marshaling from a file and outputs result to a console
+     */
     public void transformToPOJO() {
         File xmlFile = new File(fileNameXML);
-
         try
         {
             Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
@@ -45,6 +55,11 @@ public class FromAndToXML {
         }
     }
 
+    /**
+     * Validates XML against XSD Schema
+     *
+     * @return true if XML is validated successfully
+     */
     public boolean validateXMLSchema(String xsdPath, String xmlPath){
         try {
             SchemaFactory factory =
@@ -62,10 +77,20 @@ public class FromAndToXML {
         return true;
     }
 
+    /**
+     * Gets name of XML file
+     *
+     * @return name of XML file
+     */
     public String getFileNameXML() {
         return this.fileNameXML;
     }
 
+    /**
+     * Gets name of XSD file
+     *
+     * @return name of XSD file
+     */
     public String getFileNameXSD() {
         return this.fileNameXSD;
     }
