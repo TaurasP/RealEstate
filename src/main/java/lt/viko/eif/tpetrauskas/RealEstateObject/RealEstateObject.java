@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.*;
 import java.util.List;
 
 /**
@@ -13,21 +13,37 @@ import java.util.List;
  */
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class RealEstateObject {
+    @XmlAttribute
     private String type;
+    @XmlAttribute
     private float price;
+    @XmlAttribute
     private String address;
+    @XmlAttribute
     private float squareMeters;
+    @XmlAttribute
     private int numberOfFloors;
+    @XmlAttribute
     private boolean isWater;
+    @XmlAttribute
     private boolean isGas;
+    @XmlAttribute
     private boolean isElectricity;
+    @XmlAttribute
     private boolean isSewerage;
+    @XmlElement(name = "owner")
     private List<Owner> ownerList;
+    @XmlElement(name = "tenant")
     private List<Tenant> tenantList;
+    @XmlElement(name = "contract")
     private List<Contract> contractList;
+    @XmlElement(name = "room")
     private List<Room> roomsList;
+    @XmlElement(name = "item")
     private List<Item> itemsList;
+    @XmlElement(name = "key")
     private List<Key> keysList;
 
     @Override

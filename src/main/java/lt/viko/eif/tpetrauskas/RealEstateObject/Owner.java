@@ -15,12 +15,12 @@ public class Owner extends Person{
         super(name, surname, email, phone);
     }
 
-    public String toString() {
+    /*public String toString() {
         return String.format("Owners: \n\t"
                         + "name = %s\n\t\t\t"
                         + "surname = %s\n\t\t\t"
                         + "email = %s\n\t\t\t"
                         + "phone = %s\n\t\t",
                 this.getName(), this.getSurname(), this.getEmail(), this.getPhone());
-    }
+    }*/
 }

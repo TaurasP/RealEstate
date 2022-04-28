@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import java.util.Date;
 import java.util.List;
 
@@ -15,15 +18,22 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Contract {
+    @XmlElement
     private String number;
+    @XmlElement
     private boolean isSigned;
+    @XmlElement
     private Date signedDate;
+    @XmlElement
     private Date startDate;
+    @XmlElement
     private Date endDate;
+    @XmlElement(name="tenant")
     private List<Tenant> tenantsList;
 
-    @Override
+    /*@Override
     public String toString() {
         return String.format("\ncontract: \n\t"
                         + "number = %s\n\t"
@@ -46,5 +56,5 @@ public class Contract {
                     tenant.getName(), tenant.getSurname(), tenant.getEmail(), tenant.getPhone());
         }
         return result;
-    }
+    }*/
 }
