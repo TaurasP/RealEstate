@@ -50,8 +50,8 @@ public class RealEstateObjectsInit {
         Calendar endDate1 = Calendar.getInstance();
         endDate1.set(2023, 4, 30);
 
-        contractsList.add(new Contract("LT20220501-01", true, signedDate1.getTime(), startDate1.getTime(), endDate1.getTime(), ownersList, tenantsList));
-        contractsList2.add(new Contract("LT20220501-02", true, signedDate1.getTime(), startDate1.getTime(), endDate1.getTime(), ownersList, tenantsList));
+        contractsList.add(new Contract("LT20220501-01", true, signedDate1.getTime(), startDate1.getTime(), endDate1.getTime(), tenantsList));
+        contractsList2.add(new Contract("LT20220501-02", true, signedDate1.getTime(), startDate1.getTime(), endDate1.getTime(), tenantsList));
 
         keys1.add(new Key(11100012, 3));
         keys1.add(new Key(1000002323, 2));

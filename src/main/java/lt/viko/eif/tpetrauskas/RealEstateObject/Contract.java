@@ -21,7 +21,6 @@ public class Contract {
     private Date signedDate;
     private Date startDate;
     private Date endDate;
-    private List<Owner> ownersList;
     private List<Tenant> tenantsList;
 
     @Override
