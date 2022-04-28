@@ -8,7 +8,10 @@ import lombok.Setter;
 /**
  * Parasyti dokumentacija
  */
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Item {
     private String name;
     private String condition;

@@ -1,4 +1,5 @@
 package lt.viko.eif.tpetrauskas.RealEstateObject;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,9 @@ public class RealEstateObject {
     private boolean isGas;
     private boolean isElectricity;
     private boolean isSewerage;
+    private List<Owner> ownerList;
+    private List<Tenant> tenantList;
+    private List<Contract> contractList;
     private List<Room> roomsList;
     private List<Item> itemsList;
     private List<Key> keysList;
@@ -37,9 +41,53 @@ public class RealEstateObject {
                             + "water = %b\n\tgas = %b\n\t"
                             + "electricity = %b\n\t"
                             + "sewerage = %b\n\n\t"
-                            + "Rooms: %s\n\t"
+                            + "Owners: %s\n\n\t"
+                            + "Contracts: %s\n\t"
+                            + "Rooms: %s\n\n\t"
                             + "Keys: %s\n\t",
-                            type, price, address, squareMeters, numberOfFloors, isWater, isGas, isElectricity, isSewerage, printRooms(), printKeys());
+                            type, price, address, squareMeters, numberOfFloors, isWater, isGas, isElectricity, isSewerage, printOwners(), printContracts(), printRooms(), printKeys());
+    }
+
+    private Object printOwners() {
+        String result = "";
+        for(Owner owner : ownerList) {
+            result += String.format("\n\t\towner: \n\t\t\t"
+                            + "name = %s\n\t\t\t"
+                            + "surname = %s\n\t\t\t"
+                            + "email = %s\n\t\t\t"
+                            + "phone = %s\t\t\t",
+                    owner.getName(), owner.getSurname(), owner.getEmail(), owner.getPhone());
+        }
+        return result;
+    }
+
+    private Object printTenants() {
+        String result = "";
+        for(Tenant tenant : tenantList) {
+            result += String.format("\n\t\t\ttenant: \n\t\t\t\t"
+                            + "name = %s\n\t\t\t\t"
+                            + "surname = %s\n\t\t\t\t"
+                            + "email = %s\n\t\t\t\t"
+                            + "phone = %s\t\t\t\t",
+                    tenant.getName(), tenant.getSurname(), tenant.getEmail(), tenant.getPhone());
+        }
+        return result;
+    }
+
+    private Object printContracts() {
+        String result = "";
+        for(Contract contract : contractList) {
+            result += String.format("\n\t\tcontract: \n\t\t\t"
+                            + "number = %s\n\t\t\t"
+                            + "signed = %b\n\t\t\t"
+                            + "signed date = %s\n\t\t\t"
+                            + "start date = %s\n\t\t\t"
+                            + "end date = %s\n\t\t\t"
+                            + "\n\t\tTenants: %s\n\t",
+                    contract.getNumber(), contract.isSigned(), contract.getSignedDate(), contract.getStartDate(),
+                    contract.getEndDate(), printTenants());
+        }
+        return result;
     }
 
     private Object printRooms() {
@@ -49,7 +97,7 @@ public class RealEstateObject {
                                     + "name = %s\n\t\t\t"
                                     + "condition = %s\n\t\t\t"
                                     + "description = %s\n\n\t\t\t"
-                                    + "Items: %s\n\t\t\t",
+                                    + "Items: %s\t\t\t",
                                     room.getName(), room.getCondition(), room.getDescription(), printItems());
         }
         return result;
@@ -61,7 +109,7 @@ public class RealEstateObject {
             result += String.format("\n\t\t\t\titem: \n\t\t\t\t\t"
                             + "name = %s\n\t\t\t\t\t"
                             + "condition = %s\n\t\t\t\t\t"
-                            + "description = %s\n\t\t\t\t\t",
+                            + "description = %s\t\t\t\t\t",
                     item.getName(), item.getCondition(), item.getDescription());
         }
         return result;
@@ -71,9 +119,9 @@ public class RealEstateObject {
         String result = "";
         for(Key key : keysList) {
             result += String.format("\n\t\tkey: \n\t\t\t"
-                            + "name = %s\n\t\t\t"
-                            + "number of copies = %s\n\t\t\t",
-                    key.getName(), key.getNumberOfCopies());
+                            + "id = %d\n\t\t\t"
+                            + "number of copies = %d\t\t\t",
+                    key.getId(), key.getNumberOfCopies());
         }
         return result;
     }

@@ -8,16 +8,19 @@ import lombok.Setter;
 /**
  * Parasyti dokumentacija
  */
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Key {
-    private String name;
+    private int id;
     private int numberOfCopies;
 
     @Override
     public String toString() {
         return String.format("Key: \n\t"
-                        + "name = %s\n\t"
+                        + "id = %d\n\t"
                         + "number of copies = %d\n\t",
-                name, numberOfCopies);
+                                id, numberOfCopies);
     }
 }

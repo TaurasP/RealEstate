@@ -11,7 +11,10 @@ import java.util.List;
 /**
  * Parasyti dokumentacija
  */
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Contract {
     private String number;
     private boolean isSigned;
@@ -23,28 +26,14 @@ public class Contract {
 
     @Override
     public String toString() {
-        return String.format("Contract: \n\t"
+        return String.format("\ncontract: \n\t"
                         + "number = %s\n\t"
                         + "signed = %b\n\t"
                         + "signed date = %s\n\t"
                         + "start date = %s\n\n\t"
                         + "end date = %s\n\n\t"
-                        + "Owners: %s\n\t"
                         + "Tenants: %s\n\t",
-                number, isSigned, signedDate, startDate, endDate, printOwners(), printTenants());
-    }
-
-    private Object printOwners() {
-        String result = "";
-        for(Owner owner : ownersList) {
-            result = String.format("\n\t\towner: \n\t\t\t"
-                            + "name = %s\n\t\t\t"
-                            + "surname = %s\n\t\t\t"
-                            + "email = %s\n\t\t"
-                            + "phone = %s\n\t\t",
-                    owner.getName(), owner.getSurname(), owner.getEmail(), owner.getPhone());
-        }
-        return result;
+                number, isSigned, signedDate, startDate, endDate, printTenants());
     }
 
     private Object printTenants() {
