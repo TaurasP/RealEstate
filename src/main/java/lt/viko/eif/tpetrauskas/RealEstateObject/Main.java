@@ -12,6 +12,7 @@ public class Main {
         FromAndToXML fromAndToXML = new FromAndToXML();
 
         fromAndToXML.transformToXML(init.getRealEstateObjectList().get(0));
+        fromAndToXML.validateXMLSchema(fromAndToXML.getFileNameXSD(), fromAndToXML.getFileNameXML());
         fromAndToXML.transformToPOJO();
         thread.runServer();
         thread.runClient();

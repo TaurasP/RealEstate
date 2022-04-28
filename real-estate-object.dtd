@@ -1,32 +1,44 @@
 <!DOCTYPE realEstateObject [
-        <!ELEMENT realEstateObject (address|contractList|electricity|gas|itemsList|keysList|numberOfFloors|ownerList|price|roomsList|sewerage|squareMeters|tenantList|type|water)*>
-        <!ELEMENT address (#PCDATA)>
-        <!ELEMENT contractList (endDate|number|signed|signedDate|startDate|tenantsList)*>
-        <!ELEMENT endDate (#PCDATA)>
-        <!ELEMENT number (#PCDATA)>
-        <!ELEMENT signed (#PCDATA)>
-        <!ELEMENT signedDate (#PCDATA)>
-        <!ELEMENT startDate (#PCDATA)>
-        <!ELEMENT tenantsList (email|name|phone|surname)*>
+        <!ELEMENT realEstateObject (owner|tenant|contract|room|item|key)*>
+        <!ATTLIST realEstateObject
+                type CDATA #REQUIRED
+                price CDATA #REQUIRED
+                address CDATA #REQUIRED
+                squareMeters CDATA #REQUIRED
+                numberOfFloors CDATA #REQUIRED
+                isWater CDATA #REQUIRED
+                isGas CDATA #REQUIRED
+                isElectricity CDATA #REQUIRED
+                isSewerage CDATA #REQUIRED>
+        <!ELEMENT owner (email|name|phone|surname)*>
         <!ELEMENT email (#PCDATA)>
         <!ELEMENT name (#PCDATA)>
         <!ELEMENT phone (#PCDATA)>
         <!ELEMENT surname (#PCDATA)>
-        <!ELEMENT electricity (#PCDATA)>
-        <!ELEMENT gas (#PCDATA)>
-        <!ELEMENT itemsList (condition|description|name)*>
-        <!ELEMENT condition (#PCDATA)>
-        <!ELEMENT description (#PCDATA)>
-        <!ELEMENT keysList (id|numberOfCopies)*>
-        <!ELEMENT id (#PCDATA)>
-        <!ELEMENT numberOfCopies (#PCDATA)>
-        <!ELEMENT numberOfFloors (#PCDATA)>
-        <!ELEMENT ownerList (email|name|phone|surname)*>
-        <!ELEMENT price (#PCDATA)>
-        <!ELEMENT roomsList (condition|description|itemsList|name)*>
-        <!ELEMENT sewerage (#PCDATA)>
-        <!ELEMENT squareMeters (#PCDATA)>
-        <!ELEMENT tenantList (email|name|phone|surname)*>
-        <!ELEMENT type (#PCDATA)>
-        <!ELEMENT water (#PCDATA)>
+        <!ELEMENT tenant (email|name|phone|surname)*>
+        <!ELEMENT contract (number|isSigned|signedDate|startDate|endDate|tenant)*>
+        <!ELEMENT number (#PCDATA)>
+        <!ELEMENT isSigned (#PCDATA)>
+        <!ELEMENT signedDate (#PCDATA)>
+        <!ELEMENT startDate (#PCDATA)>
+        <!ELEMENT endDate (#PCDATA)>
+        <!ELEMENT room (items)*>
+        <!ATTLIST room
+                condition CDATA #REQUIRED
+                description CDATA #REQUIRED
+                name CDATA #REQUIRED>
+        <!ELEMENT items (#PCDATA)>
+        <!ATTLIST items
+                condition CDATA #REQUIRED
+                description CDATA #REQUIRED
+                name CDATA #REQUIRED>
+        <!ELEMENT item (#PCDATA)>
+        <!ATTLIST item
+                condition CDATA #REQUIRED
+                description CDATA #REQUIRED
+                name CDATA #REQUIRED>
+        <!ELEMENT key (#PCDATA)>
+        <!ATTLIST key
+                id CDATA #REQUIRED
+                numberOfCopies CDATA #REQUIRED>
         ]>
