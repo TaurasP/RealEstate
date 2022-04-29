@@ -1,5 +1,8 @@
 package lt.viko.eif.tpetrauskas.RealEstateObject;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -7,6 +10,7 @@ import java.util.List;
 /**
  * RealEstateObjectsInit is an entity used to create, initialize data for real estate objects
  */
+@Getter
 public class RealEstateObjectsInit {
     List<RealEstateObject> realEstateObjectList = new ArrayList<>();
 

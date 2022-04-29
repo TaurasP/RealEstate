@@ -1,5 +1,7 @@
 package lt.viko.eif.tpetrauskas.RealEstateObject;
 
+import lombok.Getter;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
@@ -9,6 +11,7 @@ import java.net.Socket;
 /**
  * Server is an entity used to received files from a Client entity.
  */
+@Getter
 public class Server {
     private DataOutputStream dataOutputStream = null;
     private DataInputStream dataInputStream = null;

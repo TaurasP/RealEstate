@@ -21,9 +21,9 @@
     <contract>
         <number>LT20220501-01</number>
         <isSigned>true</isSigned>
-        <signedDate>2022-06-01T22:27:47.422+03:00</signedDate>
-        <startDate>2022-06-01T22:27:47.469+03:00</startDate>
-        <endDate>2023-05-30T22:27:47.469+03:00</endDate>
+        <signedDate>2022-06-01T09:44:04.578+03:00</signedDate>
+        <startDate>2022-06-01T09:44:04.630+03:00</startDate>
+        <endDate>2023-05-30T09:44:04.630+03:00</endDate>
         <tenant>
             <email>matas.berzas@gmail.com</email>
             <name>Matas</name>

@@ -1,5 +1,6 @@
 package lt.viko.eif.tpetrauskas.RealEstateObject;
 
+import lombok.Getter;
 import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;
@@ -16,6 +17,7 @@ import java.io.*;
 /**
  * FromAndToXML is an entity used for marshaling, un-marshaling
  */
+@Getter
 public class FromAndToXML {
     private JAXBContext jaxbContext = JAXBContext.newInstance(RealEstateObject.class);
     private StringWriter xmlWriter = new StringWriter();
@@ -75,23 +77,5 @@ public class FromAndToXML {
             return false;
         }
         return true;
-    }
-
-    /**
-     * Gets name of XML file
-     *
-     * @return name of XML file
-     */
-    public String getFileNameXML() {
-        return this.fileNameXML;
-    }
-
-    /**
-     * Gets name of XSD file
-     *
-     * @return name of XSD file
-     */
-    public String getFileNameXSD() {
-        return this.fileNameXSD;
     }
 }

@@ -1,11 +1,14 @@
 package lt.viko.eif.tpetrauskas.RealEstateObject;
 
+import lombok.Getter;
+
 import java.io.*;
 import java.net.Socket;
 
 /**
  * Client is an entity used to send files to a Server entity.
  */
+@Getter
 public class Client{
     private DataOutputStream dataOutputStream = null;
     private DataInputStream dataInputStream = null;
@@ -16,7 +19,7 @@ public class Client{
      * Runs a client and sends a file to a server.
      */
     public void run() {
-        try(Socket socket = new Socket("localhost",port)) {
+        try(Socket socket = new Socket("localhost", port)) {
             dataInputStream = new DataInputStream(socket.getInputStream());
             dataOutputStream = new DataOutputStream(socket.getOutputStream());
 

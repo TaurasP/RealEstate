@@ -7,7 +7,7 @@ import javax.xml.bind.JAXBException;
  * It creates and runs threads for client and server
  * It performs marshaling, validates XML against XSD schema, saves data to XML file and outputs result to a console
  * It sends file from client to server, performs un-marshaling and outputs result to a console
- * For operations is used real estate object
+ * For operations is used real estate object from realEstateObjectList (0 and 1 elements)
  */
 public class Main {
     public static void main(String[] args) throws JAXBException {
@@ -19,6 +19,5 @@ public class Main {
         fromAndToXML.validateXMLSchema(fromAndToXML.getFileNameXSD(), fromAndToXML.getFileNameXML());
         thread.runServer();
         thread.runClient();
-
     }
 }
